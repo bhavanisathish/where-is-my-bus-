@@ -39,7 +39,7 @@
                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                            <input type="text" name="firstname" class="form-control" placeholder="Your Name *" value="" />
                         </div>
                         <div class="form-group">
                             <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
@@ -48,7 +48,7 @@
                             <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                            <input type="submit" name="submit" class="btnContact" value="Send Message" />
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -60,7 +60,15 @@
             </form>
 </div>
 <?php
-if()
+if(isset($_POST["submit"]))
+{
+   # $a=$_POST["firstname"];
+    $b=$_POST["txtEmail"];
+    $c=$_POST["firstname"];
+    $d=$_POST["txtMsg"];
+    mail("bhavanirangasamy@gmail.com","student"," has been logged in");
+    mail("$b","$c","$d");
+}
 ?>
 </body>
 </html>

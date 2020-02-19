@@ -34,26 +34,3 @@
     </li>
   </ul>
 </nav>
-<div class="container">
-    <br>   <br> 
-  <h2>BUSES DATABASE</h2>
-  <br>          
-  <table class="table table-dark table-striped">
-
-
-<?php
-include("main.php");
-
-$sq="SELECT *from buses";
-	
-	echo " <thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td></tr> </thead> <tbody>";
-	$res=$con->query($sq);
-	while($aMessages=$res->fetch_array()){
-		echo '<tr><th>'.$aMessages["busno"].'</td><td>'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].'</td><td><tr>';
-	}
-	echo " </tbody></table>";
-?>
-
-</div>
-</body>
-</html>

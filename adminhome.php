@@ -1,6 +1,7 @@
 <?php
 include("main.php");
-session_start();
+
+error_reporting( ~E_NOTICE );
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,10 +18,23 @@ session_start();
 </head>
 <body>
 	<form method="POST" action="adminhome.php">
-	<input type="submit" value="INSERT" name="insert">
-	<input type="submit" value="DELETE" name="delete">
-	<input type="submit"  value="UPDATE" name="update">
-	<input type="submit" value="VIEW" name="view">
+		<div class="input-group form-group ">
+		<div class="form-group">
+						<input type="submit" value="INSERT" name="insert" class="btn float-right login_btn">
+					</div>
+					<div class="form-group">
+						<input type="submit" value="DELETE" name="delete" class="btn float-right login_btn">
+					</div>
+					<div class="form-group">
+						<input type="submit" value="UPDATE" name="update" class="btn float-right login_btn">
+					</div>
+					<div class="form-group">
+						<input type="submit" value="VIEW" name="view" class="btn float-right login_btn">
+					</div>
+					<div class="form-group">
+						<input type="submit" name="logout" value="LOGOUT" class="btn float-right login_btn">
+					</div>
+	</div>
 </form>
 <?php
 if($_POST["insert"]){
@@ -34,6 +48,9 @@ if($_POST["update"]){
 }
 if($_POST["view"]){
 	header("location:view.php");
+}
+if($_POST["logout"]){
+	header("location:adminlogin.php");
 }
 ?>
 </body>

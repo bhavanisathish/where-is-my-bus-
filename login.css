@@ -39,6 +39,12 @@ li a:hover:not(.active) {
     text-decoration: none;
 
 }
+.c{
+    align-items: center;
+    align-content: center;
+}
+
+
 .card{
 height: 570px;
 margin-top: auto;

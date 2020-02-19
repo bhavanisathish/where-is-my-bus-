@@ -41,7 +41,7 @@ include("main.php");
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" name=submit value="Login" class="btn float-right login_btn">
+						<input type="submit" name="submit" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div><br>
@@ -56,15 +56,16 @@ include("main.php");
 		</div>
 	</div>
 </div>
+
 <?php
 	if(isset($_POST["submit"])){
 		$uname=$_POST["username"];
 		$pass=$_POST["passw"];
 
-		$sql="select *from user where username='$uname' and password='$pass'";
+		$sql="SELECT *from user where username='$uname' and password='$pass'";
 		$search=$con->query($sql);
 		if($search->num_rows>0){
-			echo "login ";
+			header("location:home.php");
 		}
 
 	}

@@ -11,3 +11,5 @@ CREATE table admin(username varchar(70),password varchar(100),mobilenumber int(2
 CREATE table buses(busno int(200),fromplace varchar(100),toplace varchar(100),fromtimeplace time,totimeplace time,seat int(100));
 
 INSERT INTO `buses` (`busno`, `fromplace`, `toplace`, `fromtimeplace`, `totimeplace`, `seat`) VALUES ('123', '2', '1', '21:00:00', '57:00:00', '32');
+
+DELETE FROM `buses` WHERE busno='$bn';
