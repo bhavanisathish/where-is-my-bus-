@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
+	<form action="view.php" method="POST">
 <div class="container">
 	<br><br>
   <h2>BUSES DATABASE</h2>          
@@ -21,17 +21,21 @@
 
 <?php
 include("main.php");
-
+error_reporting(~E_NOTICE);
 $sq="SELECT *from buses";
 
-	echo "<thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td></tr></thead><tbody>";
+	echo "<thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td><td>STATUS</td><td>DIRECTION</td></tr></thead><tbody>";
 	$res=$con->query($sq);
 	while($aMessages=$res->fetch_array()){
-		echo '<tr><th>'.$aMessages["busno"].'</td><td>'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].'</td><td><tr>';
+		echo '<tr><th>'.$aMessages["busno"].'</td><td>'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].'</td><td>'.$aMessages["status"].'</td><td>'.$aMessages["direction"].'</td></tr>';
 	}
-	echo "</tbody></table></center>";
+	echo "</tbody></table></center><input type='submit' class='btn btn-primary' name='sub' value='OK'>";
 ?>
 </div>
-<a href="adminhome.php">NEXT</a>
+</form> 
+ <?php
+if($_POST['sub'])
+  header("location:adminhome.php");
+?>
 </body>
 </html>

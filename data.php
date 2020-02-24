@@ -46,14 +46,15 @@ include("main.php");
 
 $sq="SELECT *from buses";
 	
-	echo " <thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td></tr> </thead> <tbody>";
+	echo " <thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td><td>STATUS</td><td>DIRECTION</td></tr> </thead> <tbody>";
 	$res=$con->query($sq);
 	while($aMessages=$res->fetch_array()){
-		echo '<tr><th>'.$aMessages["busno"].'</td><td>'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].'</td><td><tr>';
+		echo '<tr><th>'.$aMessages["busno"].'</td><td>'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].$aMessages["seat"].'</td><td>'.$aMessages["status"].'</td><td>'.$aMessages["direction"].'</td><td><tr>';
 	}
 	echo " </tbody></table>";
 ?>
 
 </div>
+
 </body>
 </html>

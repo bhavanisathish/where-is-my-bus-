@@ -52,5 +52,7 @@ $sq="SELECT *from buses where fromplace='$from' and toplace='$to'";
 	}
 	echo "</tbody></table>";
 ?>
+
+
 </body>
 </html>

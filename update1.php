@@ -12,6 +12,8 @@ $mess=$result->fetch_assoc();
 	<title>
 		
 </title>
+
+<link rel="stylesheet" type="text/css" href="login.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -19,7 +21,7 @@ $mess=$result->fetch_assoc();
 <body>
 <div class="container">
   <div class="row">
-    <h2>Insert</h2>
+    <h2>Update</h2>
     <div class="container">
       <form action="update1.php" method="POST">
         <div class="form-group row">
@@ -62,10 +64,24 @@ $mess=$result->fetch_assoc();
           </div>
         </div>
 
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-4 col-form-label">Status</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="sta" value="<?php echo $mess['status'] ?>" placeholder="Number Of Seats">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-4 col-form-label">Direction</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="dir" value="<?php echo $mess['direction'] ?>" placeholder="Number Of Seats">
+          </div>
+        </div>
+
         
         <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">
-            <input type="submit" class="btn btn-primary" name="submit" value="Insert">
+            <input type="submit" class="btn btn-primary" name="submit" value="Update">
           </div>
         </div>
       </form>
@@ -79,7 +95,9 @@ $tp=$_POST["tp"];
 $ft=$_POST["ft"];
 $tt=$_POST["tt"];
 $ss=$_POST["ss"];
-$update="UPDATE `buses` SET `fromplace`='$fp',`toplace`='$tp',`fromtimeplace`='$ft',`totimeplace`='$tt',`seat`='$ss' WHERE busno=$busnumber";
+$sta=$_POST['sta'];
+$dir=$_POST['dir'];
+$update="UPDATE `buses` SET `fromplace`='$fp',`toplace`='$tp',`fromtimeplace`='$ft',`totimeplace`='$tt',`seat`='$ss',`status`='$sta',`direction`='$dir' WHERE busno=$busnumber";
 if($con->query($update)){
 	header("location:adminhome.php");
 }

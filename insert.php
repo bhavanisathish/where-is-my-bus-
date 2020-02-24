@@ -57,7 +57,18 @@ include("main.php");
             <input type="text" class="form-control" name="ss"  placeholder="Number Of Seats">
           </div>
         </div>
-
+         <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-4 col-form-label">Status</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="sta"  placeholder="Status Of The Bus">
+          </div>
+        </div>
+         <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-4 col-form-label">Direction</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="dir"  placeholder="Direction">
+          </div>
+        </div>
         
         <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">
@@ -75,7 +86,9 @@ $tp=$_POST["tp"];
 $ft=$_POST["ft"];
 $tt=$_POST["tt"];
 $ss=$_POST["ss"];
-$insert="INSERT INTO `buses` (`busno`, `fromplace`, `toplace`, `fromtimeplace`, `totimeplace`, `seat`) VALUES ('$bn','$fp','$tp','$ft','$tt','$ss')";
+$sta=$_POST['sta'];
+$dir=$_POST['dir'];
+$insert="INSERT INTO `buses` (`busno`, `fromplace`, `toplace`, `fromtimeplace`, `totimeplace`, `seat`, `status`,`direction`) VALUES ('$bn','$fp','$tp','$ft','$tt','$ss','$sta','$dir')";
 if($con->query($insert)){
 	header("location:adminhome.php");
 }
