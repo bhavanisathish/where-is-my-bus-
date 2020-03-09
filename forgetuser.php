@@ -66,6 +66,8 @@ if($un!="" && $emailid!=""  && $upas!=""){
 if($res->num_rows>0){
 	$update="UPDATE user set password='$cpassword' where username='$un' and emailid='$emailid'";
 	$con->query($update);
+	$k=$un+' !, your account password has been update to'+$cpassword;
+	mail($emailid,"Bus Line",$un);
 	echo "inserted";
 	header("location:login.php");
 }

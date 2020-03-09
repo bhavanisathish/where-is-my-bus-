@@ -64,8 +64,11 @@ if($un!="" && $emailid!=""  && $upas!=""){
 if($res->num_rows>0){
 	$update="UPDATE admin set password='$cpassword' where username='$un' and emailid='$emailid'";
 	$con->query($update);
+	$k=$un+' !, your account password has been update to'+$cpassword;
+	mail($emailid,"Bus Line",$un);
 	echo "inserted";
 	header("location:adminlogin.php");
+
 }
 }else{echo "<p class='error'>Password must be same";}
 }

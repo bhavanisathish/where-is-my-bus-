@@ -29,7 +29,7 @@ session_start();
         
         <div class="form-group row">
           <div class="offset-sm-2 col-sm-10">
-            <input type="submit" class="btn btn-primary" name="submit" value="Delete">
+            <input type="submit" class="btn btn-primary" name="submit" value="Update">
           </div>
         </div>
       </form>
