@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+	<title>
+		
+	</title>
+</head>
+<body>
+	<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYmhhdmFuaXJhbmdhc2FteSIsImEiOiJjazhlbzJmaW4xNzF3M2xvMWoxOWIzeHQxIn0.0cXeNxgvkrfwTH2nza0jEg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11'
+center: [-79.4512, 43.6568],
+zoom: 5
+});
+map.on('load', function() {
+  var directions = new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+  });
+  map.addControl(directions, 'top-left');
+
+  directions.setOrigin('Madurai, India');
+directions.setDestination('Theni, India'); 
+});
+</script>
+
+</body>
+</html>*/
+
+map.addControl(
+new MapboxDirections({
+accessToken: mapboxgl.accessToken
+}),
+'top-left'
+);
+
+
+
+map.on('load', function() {
+  var directions = new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+  });
+  map.addControl(directions, 'top-left');

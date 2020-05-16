@@ -88,9 +88,13 @@ $tt=$_POST["tt"];
 $ss=$_POST["ss"];
 $sta=$_POST['sta'];
 $dir=$_POST['dir'];
+if($bn!='' and $fp!='' and $tp!='' and $ft!='' and $tt!='' and $ss!='' and $sta!='' and $dir!=''){
 $insert="INSERT INTO `buses` (`busno`, `fromplace`, `toplace`, `fromtimeplace`, `totimeplace`, `seat`, `status`,`direction`) VALUES ('$bn','$fp','$tp','$ft','$tt','$ss','$sta','$dir')";
 if($con->query($insert)){
 	header("location:adminhome.php");
+}
+}else{
+  echo "<script>alert('Fill all the deatils');</script>";
 }
 }
 ?>

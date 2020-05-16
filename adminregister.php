@@ -63,6 +63,7 @@ $cpassword=$_POST["cpassword"];
 $upas=$_POST["pas"];
 if($un!="" && $emailid!="" && $unum!="" && $upas!=""){
 	if($cpassword==$upas){
+		
 $ins="INSERT INTO `admin` (`username`, `password`, `mobilenumber`, `emailid`) VALUES('$un','$cpassword','$unum','$emailid')";
 if($con->query($ins)){
 	echo "inserted";

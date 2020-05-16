@@ -38,9 +38,12 @@ session_start();
 <?php
 if(isset($_POST["submit"])){
 $_SESSION["bussn"]=$_POST["bn"];
-
+if($_POST["bn"]!=''){
 header("location:update1.php");
-
+}
+else{
+  echo "<script>alert('Fill all the details');</script>";
+}
 }
 ?>
 </body>

@@ -66,6 +66,8 @@ include("main.php");
 		if($search->num_rows>0){
 			header("location:adminhome.php");
 			
+		}else{
+			echo "<script> alert('Invalid username and password');</script>";
 		}
 
 	}

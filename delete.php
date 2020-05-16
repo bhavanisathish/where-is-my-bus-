@@ -37,10 +37,13 @@ include("main.php");
 <?php
 if(isset($_POST["submit"])){
 $bn=$_POST["bn"];
-
+if($bn!=""){
 $del="DELETE from `buses` where busno='$bn'";
 if($con->query($del)){
 	header("location:adminhome.php");
+}}
+else{
+  echo "<script>alert('Fill all the details');</script>";
 }
 }
 ?>

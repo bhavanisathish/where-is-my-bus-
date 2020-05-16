@@ -29,9 +29,10 @@ $sq="SELECT *from buses";
 	while($aMessages=$res->fetch_array()){
 		echo '<tr><th>'.$aMessages["busno"].'</td><td>'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].'</td><td>'.$aMessages["status"].'</td><td>'.$aMessages["direction"].'</td></tr>';
 	}
-	echo "</tbody></table></center><input type='submit' class='btn btn-primary' name='sub' value='OK'>";
+	echo '</tbody></table></center><a href="456.html"><button  class="btn float-left login_btn" style="size: 10%;">Direction</button></a><input type="submit" class="btn btn-primary" name="sub" value="OK">';
 ?>
 </div>
+
 </form> 
  <?php
 if($_POST['sub'])

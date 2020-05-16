@@ -28,8 +28,7 @@ type="text/css"
 <style>
 
 body { margin: 0; padding: 0; }
-  #map {position: absolute; top: 100%; bottom: 0%;  width: 100%;height: 80%; }
-
+ 
 </style>
 
 <body>
@@ -44,18 +43,22 @@ body { margin: 0; padding: 0; }
     <li class="nav-item">
       <a class="nav-link" href="about.php">About</a>
     </li>
-   
+     <li class="nav-item">
+      <a class="nav-link" href="contact.php">Contact</a>
+    </li>
     <li class="nav-item">
-      <a class="nav-link" href="startpage.php">Logout</a>
+      <a class="nav-link" href="login.php">Logout</a>
     </li>
   </ul>
 </nav>
 <div class="container">
     <br>   <br> 
   <h2>BUSES DATABASE</h2>
-  <br>     <table class="table table-dark table-striped">
+  <br>     
+ 
+  <table class="table table-dark table-striped">
 
-<thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td><td>STATUS</td></tr> </thead> <tbody>
+<thead><tr><th>BUS NUMBER</td><td>FROM</td><td>TO</td><td>FROM TIME</td><td>TO TIME</td><td>SEAT</td><td>STATUS</td><td>DIRECTION</td></tr> </thead> <tbody>
 <?php
 include("main.php");
 
@@ -63,13 +66,41 @@ $sq="SELECT *from buses";
   $res=$con->query($sq);
   while($aMessages=$res->fetch_array()){ 
 
-    echo '<tr><th >'.$aMessages["busno"].'</td><td >'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].$aMessages["seat"].'</td><td>'.$aMessages["status"].'</td>';
+    echo '<tr><th name="funny">'.$aMessages["busno"].'</td><td name="funy">'.$aMessages["fromplace"].'</td><td>'.$aMessages["toplace"].'</td><td>'.$aMessages["fromtimeplace"].'</td><td>'.$aMessages["totimeplace"].'</td><td>'.$aMessages["seat"].$aMessages["seat"].'</td><td>'.$aMessages["status"].'</td>';
+    echo "
 
+<div id='map' style='width:30%;'></div>
+
+
+<script>
+
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYmhhdmFuaXJhbmdhc2FteSIsImEiOiJjazhlbzJmaW4xNzF3M2xvMWoxOWIzeHQxIn0.0cXeNxgvkrfwTH2nza0jEg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-79.4512, 43.6568],
+            zoom: 6
+        });
+  
+        map.on('load', function() {
+  var directions = new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+  });
+  map.addControl(directions, 'top-left');
+  directions.setOrigin('". $aMessages["fromplace"].",Tamil Nadu, India');
+
+directions.setDestination('".$aMessages["toplace"].", Tamil Nadu, India'); 
+  });
+
+
+    </script>
+    ";
   }
   ?>
-    </tbody>
+  </tbody>
 </table>
-<a href="123.html"><button  class="btn float-left login_btn" style="size: 10%;">Direction</button></a>
+
 </body>
 </html>
 

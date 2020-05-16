@@ -16,3 +16,6 @@ INSERT INTO `buses` (`busno`, `fromplace`, `toplace`, `fromtimeplace`, `totimepl
 ALTER TABLE `buses` ADD PRIMARY KEY(`busno`);
 
 DELETE FROM `buses` WHERE busno='$bn';
+
+
+INSERT INTO `studentdetails` (`name`, `reg_number`, `roll_number`, `father_name`, `nationality`, `religion`, `caste`, `community`, `sex`, `dateofbirth`, `course`, `branch`, `admittedon`, `receiptno`, `receiptdate`, `mothertongue`, `state`, `present_address`, `taluk`, `city`, `district`, `cell_number`, `aadhar_number`, `tcno`, `issuedon`, `Year_Of_Passout`) VALUES ('Bhavani R', '1715007', '17cs008', 'Rangasamy A', 'Indian', 'Hindu', 'BC', 'Gowda', 'Female', '2000-03-14', 'BE', 'Computer Science and Engineering', '2020-03-10', '12', '2020-01-09', 'Tamil', 'Tamilnadu', '13yugiu', 'Bodinyakanur', 'Karaikudi', 'Theni', '1234567890', '1234567890', '123', '2020-03-18', '2021');

@@ -97,9 +97,14 @@ $tt=$_POST["tt"];
 $ss=$_POST["ss"];
 $sta=$_POST['sta'];
 $dir=$_POST['dir'];
+if($fp!='' and $tp!='' and $ft!='' and $tt!='' and $ss!='' and $sta!='' and $dir!=''){
 $update="UPDATE `buses` SET `fromplace`='$fp',`toplace`='$tp',`fromtimeplace`='$ft',`totimeplace`='$tt',`seat`='$ss',`status`='$sta',`direction`='$dir' WHERE busno=$busnumber";
 if($con->query($update)){
 	header("location:adminhome.php");
+}
+}
+else{
+  echo "<script>alert('Fill all the details');</script>";
 }
 }
 ?>

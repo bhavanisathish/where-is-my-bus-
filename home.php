@@ -27,31 +27,41 @@ session_start();
     <li class="nav-item">
       <a class="nav-link" href="about.php">About</a>
     </li>
-     <li class="nav-item">
-      <a class="nav-link" href="contact.php">Contact</a>
-    </li>
+     
     <li class="nav-item">
-      <a class="nav-link" href="login.php">Logout</a>
+      <a class="nav-link" href="startpage.php">Logout</a>
     </li>
   </ul>
-</nav>
+</nav><br>
 <form action="home.php" method="POST" autocomplete="OFF">
 
 <div class="container">
+<div class="row">
+  
+<h1>Search My Bus</h1>
 
-<h3><center>Search My Bus</center></h3>
-	 <div class="form-group">
-          <label>ENTER THE FROM PLACE </label>
-        <input type="text"  name="subj" sclass="form-control col-xm-2"  required></textarea>
+    <div class="container">
+<br><br>
+ <div class="form-group row">
+
+    <label for="inputEmail3" class="col-sm-6 col-form-label" style="font: 30px Arial, sans-serif;">ENTER THE FROM PLACE</label>
+          <div class="col-sm-6">
+          <input type="text"  name="subj" style="font: 30px Arial, sans-serif;" required ></textarea>
     </div>
- <div class="form-group">
-          <label>ENTER THE TO PLACE </label>
-        <input type="text"  name="subj1" sclass="form-control col-xm-2"  required></textarea>
+  </div><br>
+ <div class="form-group row">
+           <label for="inputEmail3" class="col-sm-6 col-form-label" style="font: 30px Arial, sans-serif;">ENTER TO PLACE</label>
+           <div class="col-sm-6">
+        <input type="text"  name="subj1" style="font: 30px Arial, sans-serif;" required></textarea>
 </div>
-<div class="form-group">
+</div><br><br>
+<div class="form-group row">
          
-        <input type="submit"  name="submit" sclass="form-control col-xm-2"  required></textarea>
+        <input type="submit"  name="submit" sclass="form-control col-xm-2"  class="btn btn-primary"  required></textarea>
 </div></div>
+</div>
+</div>
+
 </form>
 
 <?php

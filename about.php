@@ -26,11 +26,9 @@
     <li class="nav-item">
       <a class="nav-link" href="about.php">About</a>
     </li>
-     <li class="nav-item">
-      <a class="nav-link" href="contact.php">Contact</a>
-    </li>
+   
     <li class="nav-item">
-      <a class="nav-link" href="login.php">Logout</a>
+      <a class="nav-link" href="startpage.php">Logout</a>
     </li>
   </ul>
 </nav>
