@@ -1,6 +1,4 @@
-# where-is-my-bus-
-
-Abstract
+# where-is-my-bus
 
 Objective of the project
 
